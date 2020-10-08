@@ -12,7 +12,7 @@
 		$service_providers = $_POST['service_providers'];
 		$user_name = $_POST['user_name'];
 		$email_domain = $_POST['email_domain'];
-		
+
 		$id = $conn->insert_id;
 		$insert1 = $conn->query("INSERT INTO `contact_info` (`contact_name`, `relationship`, `contact_type`) VALUES('$contact_name', '$relationship', '$contact_type')") or die($insert1->error);
 		
@@ -32,7 +32,7 @@
 
 				} else {
 
-					echo "failed to create record";		
+					echo "failed to create record";	
 
 				}
 		}
