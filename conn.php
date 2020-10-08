@@ -1,14 +1,11 @@
 <?php 
 	
-
 	$servername = "localhost";
 	$username = "root";
 	$password = "";
 	$database = "phone_book";
 
-	$conn = new mysqli($servername, $username, $password, $database) or die(mysqli_error($mysqli));
-
-	$result = $conn->query("SELECT * FROM vw_pbk");
+	$conn = new mysqli($servername, $username, $password, $database) or die($conn->connect_error);
 
 	//check connection
 
@@ -19,5 +16,4 @@
 	// echo 'Connected successfully';
 	
 
-	mysqli_close($conn);
 ?>
