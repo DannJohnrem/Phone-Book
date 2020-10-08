@@ -1,5 +1,10 @@
+<?php 
 
-<?php require_once 'conn.php'; ?>
+require 'read.php';
+include 'conn.php'; 
+
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,37 +18,41 @@
 </head>
 <body>
 	
-
 	<div class="container">
-
-		<?php include 'conn.php'; ?>
-
-			<div class="row justify-content-center">
-				<table class="table">
-					<thead>
-						<tr>
-							<th>Contact Name</th>
-							<th>Relationship</th>
-							<th>Contact Number</th>
-							<th>Email Address</th>
-							<th colspan="2">ACTION</th>
-						</tr>
-					</thead>
-				<?php
-					while ( $row = $result->fetch_assoc()) {
-				?>
-
+		<div class="row justify-content-center">
+			<table class="table">
+				<thead>
 					<tr>
-						<td><?php echo $row['contact_name']?></td>
-						<td><?php echo $row['relationship']?></td>
-						<td><?php echo $row['contact_num']?></td>
-						<td><?php echo $row['email_add']?></td>
+						<th>Contact Name</th>
+						<th>Relationship</th>
+						<th>Contact Number</th>
+						<th>Email Address</th>
+						<th colspan="2">ACTION</th>
 					</tr>
-				<?php 
-					} 
-				?>
-				</table>
-			</div>
+				</thead>
+			<?php
+				while ( $row = $result->fetch_assoc()) {
+			?>
+
+				<tr>
+					<td><?php echo $row['contact_name']?></td>
+					<td><?php echo $row['relationship']?></td>
+					<td><?php echo $row['contact_num']?></td>
+					<td><?php echo $row['email_add']?></td>
+					<td>
+						<form action="edit.php">
+							<input type="button" class="btn btn-info " name="edit" value="EDIT">
+						</form>
+						<form action="delete.php">
+							<input type="button" class="btn btn-danger" name="delete" value="DELETE">
+						</form>
+					</td>
+				</tr>
+			<?php 
+				} 
+			?>
+			</table>
+		</div>
 
 		<div class="row justify-content-center">
 			<div class="col-8">
@@ -78,8 +87,12 @@
 							<input type="text" name="service_providers" class="form-control" placeholder="Enter your Service Providers" maxlength="11">
 						</div>
 						<div class="form-group col-md-6">
-							<label for="email_add">Email Address: </label>
-							<input type="email" name="email_add" class="form-control" placeholder="Enter your Email Address">	
+							<label for="user_name">Email User Name: </label>
+							<input type="text" name="user_name" class="form-control" placeholder="Enter your Email User Name">	
+						</div>
+						<div class="form-group col-md-6">
+							<label for="email_domain">Email Domain: </label>
+							<input type="text" name="email_domain" class="form-control" placeholder="Enter your Email Domain">	
 						</div>
 					</div>
 					<div class="row offset-10">
