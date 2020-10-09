@@ -27,7 +27,8 @@ if (isset($_POST['save'])) {
 
 		if ($insert3 === true) {
 
-			echo "New record created successfully";
+			echo "<script>alert('New record created successfully')</script>";
+			echo "<script>window.location.href = '/PHONE_BOOK/index.php'</script>";
 		} else {
 
 			echo "failed to create record";
