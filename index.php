@@ -1,13 +1,14 @@
-<?php 
+<?php
 
 require 'read.php';
-include 'conn.php'; 
+include 'conn.php';
 
 
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,8 +17,9 @@ include 'conn.php';
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 </head>
+
 <body>
-	
+
 	<div class="container">
 		<div class="row justify-content-center">
 			<table class="table table-bordered table-sm" id="dataTable" width="100%" cellspacing="0">
@@ -30,27 +32,27 @@ include 'conn.php';
 						<th colspan="2">ACTION</th>
 					</tr>
 				</thead>
-			<?php
+				<?php
 				foreach ($results as $row) {
-			?>
+				?>
 
-				<tr>
-					<td><?php echo $row['contact_name']?></td>
-					<td><?php echo $row['relationship']?></td>
-					<td><?php echo $row['contact_num']?></td>
-					<td><?php echo $row['email_add']?></td>
-					<td>
-						<form action="edit.php">
-							<input type="button" class="btn btn-info " name="edit" value="EDIT">
-						</form>
-						<form action="delete.php">
-							<input type="button" class="btn btn-danger" name="delete" value="DELETE">
-						</form>
-					</td>
-				</tr>
-			<?php 
-				} 
-			?>
+					<tr>
+						<td><?php echo $row['contact_name'] ?></td>
+						<td><?php echo $row['relationship'] ?></td>
+						<td><?php echo $row['contact_num'] ?></td>
+						<td><?php echo $row['email_add'] ?></td>
+						<td>
+							<form action="edit.php">
+								<input type="button" class="btn btn-info " name="edit" value="EDIT">
+							</form>
+							<form action="delete.php">
+								<input type="button" class="btn btn-danger" name="delete" value="DELETE">
+							</form>
+						</td>
+					</tr>
+				<?php
+				}
+				?>
 			</table>
 		</div>
 
@@ -71,9 +73,9 @@ include 'conn.php';
 						<div class="form-group col-md-10">
 							<label for="contact_type">Contact Type: </label>
 							<select id="contact_type" name="contact_type" class="custom-select">
-							  <option value="0">--Select Contact Types--</option>
-							  <option value="home">Home</option>
-							  <option value="work">Work</option>
+								<option value="0">--Select Contact Types--</option>
+								<option value="home">Home</option>
+								<option value="work">Work</option>
 							</select>
 						</div>
 					</div>
@@ -88,11 +90,11 @@ include 'conn.php';
 						</div>
 						<div class="form-group col-md-6">
 							<label for="user_name">Email User Name: </label>
-							<input type="text" name="user_name" class="form-control" placeholder="Enter your Email User Name">	
+							<input type="text" name="user_name" class="form-control" placeholder="Enter your Email User Name">
 						</div>
 						<div class="form-group col-md-6">
 							<label for="email_domain">Email Domain: </label>
-							<input type="text" name="email_domain" class="form-control" placeholder="Enter your Email Domain">	
+							<input type="text" name="email_domain" class="form-control" placeholder="Enter your Email Domain">
 						</div>
 					</div>
 					<div class="row offset-10">
@@ -105,4 +107,5 @@ include 'conn.php';
 		</div>
 	</div>
 </body>
+
 </html>
