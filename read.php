@@ -2,7 +2,7 @@
 
     require './conn.php';
 
-    $result = $conn->query("SELECT * FROM vw_pbk ");
+    $results = $conn->query("SELECT * FROM vw_pbk ");
 
 
 
