@@ -20,7 +20,7 @@ include 'conn.php';
 	
 	<div class="container">
 		<div class="row justify-content-center">
-			<table class="table">
+			<table class="table table-bordered table-sm" id="dataTable" width="100%" cellspacing="0">
 				<thead>
 					<tr>
 						<th>Contact Name</th>
@@ -31,7 +31,7 @@ include 'conn.php';
 					</tr>
 				</thead>
 			<?php
-				while ( $row = $result->fetch_assoc()) {
+				foreach ($results as $row) {
 			?>
 
 				<tr>
