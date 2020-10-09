@@ -42,10 +42,10 @@ include 'conn.php';
 						<td><?php echo $row['contact_num'] ?></td>
 						<td><?php echo $row['email_add'] ?></td>
 						<td>
-							<form action="edit.php">
+							<form action="edit.php" method="get">
 								<input type="button" class="btn btn-info " name="edit" value="EDIT">
 							</form>
-							<form action="delete.php">
+							<form action="delete.php" method="get">
 								<input type="button" class="btn btn-danger" name="delete" value="DELETE">
 							</form>
 						</td>
