@@ -1,7 +1,7 @@
 <?php
 
-require 'read.php';
-include 'conn.php';
+include 'read.php';
+require 'conn.php';
 
 
 ?>
@@ -19,6 +19,18 @@ include 'conn.php';
 </head>
 
 <body>
+	<?php
+		if (isset($_SESSION['message'])): ?>
+	<div class="alert alert-<?=$_SESSION['msg_type'];?>">
+
+		<?php
+			echo $_SESSION['message'];
+			unset($_SESSION['message']);
+		?>
+	</div>
+	<?php
+		endif;
+	?>	
 
 	<div class="container">
 		<div class="row justify-content-center">
@@ -33,8 +45,7 @@ include 'conn.php';
 					</tr>
 				</thead>
 				<?php
-				foreach ($results as $row) {
-				?>
+				foreach ($results as $row) :?>
 
 					<tr>
 						<td><?php echo $row['contact_name'] ?></td>
@@ -42,16 +53,12 @@ include 'conn.php';
 						<td><?php echo $row['contact_num'] ?></td>
 						<td><?php echo $row['email_add'] ?></td>
 						<td>
-							<form action="edit.php" method="get">
-								<input type="button" class="btn btn-info " name="edit" value="EDIT">
-							</form>
-							<form action="delete.php" method="get">
-								<input type="button" class="btn btn-danger" name="delete" value="DELETE">
-							</form>
+							<a href="edit.php?edit=<?php echo $row['id']?>" class="btn btn-info">Edit</a>
+							<a href="delete.php?delete=<?php echo $row['id']?>" class="btn btn-danger">Delete</a>
 						</td>
 					</tr>
 				<?php
-				}
+					endforeach
 				?>
 			</table>
 		</div>

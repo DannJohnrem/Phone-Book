@@ -1,4 +1,8 @@
 <?php
+    if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
 
 $servername = "localhost";
 $username = "root";
@@ -14,3 +18,5 @@ if ($conn->connect_error) {
 }
 
 	// echo 'Connected successfully';
+
+?>
