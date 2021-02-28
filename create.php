@@ -12,8 +12,8 @@ if (isset($_POST['save'])) {
 	$contact_type = $_POST['contact_type'];
 	$contact_num = $_POST['contact_num'];
 	$service_providers = $_POST['service_providers'];
-	$user_name = $_POST['user_name'];
-	$email_domain = $_POST['email_domain'];
+	$email_add = $_POST['email_add'];
+	
 
 	
 
@@ -26,7 +26,7 @@ if (isset($_POST['save'])) {
 
 		if ($insert2 === true) {
 
-			$insert3 = $conn->query("INSERT INTO email_table (user_name , email_domain, ci_id) VALUES ('$user_name', '$email_domain', '$id')");
+			$insert3 = $conn->query("INSERT INTO email_table (email_add, ci_id) VALUES ('$email_add', '$id')");
 		}
 
 		if ($insert3 === true) {
