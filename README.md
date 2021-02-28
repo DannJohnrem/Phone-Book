@@ -13,4 +13,4 @@ Import the `phone_book.sql` to the *phpmyadmin*
 
 you're ready to go!
 
-#ENJOY CODING
+#ENJOY CODING :smiling_face_with_three_hearts:
