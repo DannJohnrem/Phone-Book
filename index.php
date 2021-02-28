@@ -96,13 +96,13 @@ require 'conn.php';
 							<input type="text" name="service_providers" class="form-control" placeholder="Enter your Service Providers" maxlength="11">
 						</div>
 						<div class="form-group col-md-6">
-							<label for="user_name">Email User Name: </label>
-							<input type="text" name="user_name" class="form-control" placeholder="Enter your Email User Name">
+							<label for="email_add">Email Address: </label>
+							<input type="text" name="email_add" class="form-control" placeholder="Enter your Email Address">
 						</div>
-						<div class="form-group col-md-6">
+						<!-- <div class="form-group col-md-6">
 							<label for="email_domain">Email Domain: </label>
 							<input type="text" name="email_domain" class="form-control" placeholder="Enter your Email Domain">
-						</div>
+						</div> -->
 					</div>
 					<div class="row offset-10">
 						<div class="form-group">
